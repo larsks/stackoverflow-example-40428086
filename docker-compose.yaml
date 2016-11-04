@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  uwsgi:
+    build: uwsgi
+    networks:
+      main:
+        aliases:
+          - uwsgi.app
+  nginx:
+    build: nginx
+    networks:
+      main:
+    ports:
+      - "80:80"
+
+networks:
+  main:
